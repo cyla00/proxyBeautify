@@ -5,11 +5,17 @@ from modules.getdir import getDesktop
 downloadLink = "https://api.proxyscrape.com/v2/?request=getproxies&protocol=socks5&timeout=10000&country=all"
 list = requests.get(downloadLink, allow_redirects=True)
 
-def createTxt():
-    desktop = getDesktop.dir()
-    os.chdir(desktop)
-    fileName = "live_dead_socks5"
-    fileType = ".txt"
-    file = open(fileName + fileType, "wb").write(list.content)
-    print(f"{file} created on {desktop}")
+
+class Create:
+
+    def createTxt():
+
+        content = list.content
+        listed = content.split()
+
+        for ip in listed:
+            proxy = str(ip)
+            cleaned = proxy.translate({ord("b"): None, ord("'"): None, ord(":"): " "})
+            print(f"socks5 {cleaned}")            
+
 
