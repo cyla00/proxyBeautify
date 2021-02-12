@@ -8,7 +8,7 @@ list = requests.get(downloadLink, allow_redirects=True)
 def createTxt():
     desktop = getDesktop.dir()
     os.chdir(desktop)
-    fileName = "socks5"
+    fileName = "live_dead_socks5"
     fileType = ".txt"
     file = open(fileName + fileType, "wb").write(list.content)
     print(f"{file} created on {desktop}")
