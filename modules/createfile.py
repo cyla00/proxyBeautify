@@ -4,7 +4,6 @@ from colorama import init
 from termcolor import cprint
 from pyfiglet import figlet_format
 import requests
-from modules.getdir import getDesktop
 
 downloadLink = "https://api.proxyscrape.com/v2/?request=getproxies&protocol=socks5&timeout=10000&country=all"
 list = requests.get(downloadLink, allow_redirects=True)

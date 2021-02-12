@@ -13,20 +13,21 @@ cprint(figlet_format(owner, font="digital"), "cyan")
 
 
 
-def intro():
+def program():
 
-    cprint('dump? -y or -exit', "cyan")
+    cprint('dump? y or exit', "cyan")
     answer = input()
 
-    if answer == '-y':
+    if answer == 'y':
         try:
             Create.createTxt()
         except:
             cprint('error occured please try later', "cyan")
-    elif answer == '-exit':
+            program()
+    elif answer == 'exit':
             cprint('exiting...', "cyan")
     else:
         cprint("############ bro don't waste my time ############", "cyan")
-        intro()
+        program()
         
-intro()
+program()
