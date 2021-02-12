@@ -1,4 +1,8 @@
 import os
+import sys
+from colorama import init
+from termcolor import cprint
+from pyfiglet import figlet_format
 import requests
 from modules.getdir import getDesktop
 
@@ -16,6 +20,6 @@ class Create:
         for ip in listed:
             proxy = str(ip)
             cleaned = proxy.translate({ord("b"): None, ord("'"): None, ord(":"): " "})
-            print(f"socks5 {cleaned}")            
+            cprint(f"socks5 {cleaned}", "cyan")            
 
 
