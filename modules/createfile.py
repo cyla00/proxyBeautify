@@ -19,6 +19,8 @@ downloadLink = f"https://api.proxyscrape.com/v2/?request=getproxies&protocol={pr
 list = requests.get(downloadLink, allow_redirects=True)
 
 
+
+
 class Create:
 
     def createTxt():
