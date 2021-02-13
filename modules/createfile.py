@@ -15,10 +15,10 @@ class Create:
 
     def scrap():
 
-        # from 50ms to max 10000ms default=900
+        # from 50ms to max 10000ms default=600
         timeout = 600 
 
-        # for all type "all" for a specific country use country code (IT, US, DE etc...)
+        # for all "all" for a specific country use country code (IT, US, DE etc...)
         country_link = "all"
 
         # choose from http, socks4 and socks5
