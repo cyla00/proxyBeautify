@@ -13,13 +13,13 @@ cprint(figlet_format(owner, font="digital"), "cyan")
 
 
 def program():
-
+    
     cprint('dump? y or exit', "cyan")
     answer = input()
 
     if answer == 'y':
         try:
-            Create.createTxt()
+            Create.scrap()
         except:
             cprint('error occured please try later...', "cyan")
             program()

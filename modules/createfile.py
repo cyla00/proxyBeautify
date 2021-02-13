@@ -6,24 +6,38 @@ from pyfiglet import figlet_format
 import requests
 from proxy_checker import ProxyChecker
 
-# from 50ms to max 10000ms
-timeout = 1000 
 
-# for all type "all" for a specific country use country code (IT, US, DE etc...)
-country_link = "all"
-
-# choose from http, socks4 and socks5
-protocol_link = "http"
-
-downloadLink = f"https://api.proxyscrape.com/v2/?request=getproxies&protocol={protocol_link}&timeout={timeout}&country={country_link}&simplified=true"
-list = requests.get(downloadLink, allow_redirects=True)
 
 
 
 
 class Create:
 
-    def createTxt():
+    def scrap():
+
+        # from 50ms to max 10000ms default=900
+        timeout = 600 
+
+        # for all type "all" for a specific country use country code (IT, US, DE etc...)
+        country_link = "all"
+
+        # choose from http, socks4 and socks5
+        cprint("choose a protocol: socks5 | socks4 | http", "cyan")
+        protocol_list = ['socks5', 'socks4', 'http']
+        protocol_answer = input()
+
+        if protocol_answer == protocol_list[0]:
+            protocol_link = protocol_list[0]
+
+        elif protocol_answer == protocol_list[1]:
+            protocol_link = protocol_list[1]
+
+        elif protocol_answer == protocol_list[2]:
+            protocol_link = protocol_list[2]
+
+
+        downloadLink = f"https://api.proxyscrape.com/v2/?request=getproxies&protocol={protocol_link}&timeout={timeout}&country={country_link}&simplified=true"
+        list = requests.get(downloadLink, allow_redirects=True)
 
         content = list.content
         listed = content.split()
