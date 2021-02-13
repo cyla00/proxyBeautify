@@ -12,7 +12,6 @@ owner = "by seroktika"
 cprint(figlet_format(owner, font="digital"), "cyan")
 
 
-
 def program():
 
     cprint('dump? y or exit', "cyan")
@@ -22,7 +21,7 @@ def program():
         try:
             Create.createTxt()
         except:
-            cprint('error occured please try later', "cyan")
+            cprint('error occured please try later...', "cyan")
             program()
     elif answer == 'exit':
             cprint('exiting...', "cyan")
