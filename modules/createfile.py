@@ -22,19 +22,23 @@ class Create:
         country_link = "all"
 
         # choose from http, socks4 and socks5
-        cprint("choose a protocol: socks5 | socks4 | http", "cyan")
-        protocol_list = ['socks5', 'socks4', 'http']
-        protocol_answer = input()
+        def protocol_set():
+            cprint("choose a protocol: socks5 | socks4 | http", "cyan")
+            protocol_list = ['socks5', 'socks4', 'http']
+            protocol_answer = input()
 
-        if protocol_answer == protocol_list[0]:
-            protocol_link = protocol_list[0]
+            if protocol_answer == protocol_list[0]:
+                return protocol_list[0]
 
-        elif protocol_answer == protocol_list[1]:
-            protocol_link = protocol_list[1]
+            elif protocol_answer == protocol_list[1]:
+                return protocol_list[1]
 
-        elif protocol_answer == protocol_list[2]:
-            protocol_link = protocol_list[2]
+            elif protocol_answer == protocol_list[2]:
+                return protocol_list[2]
+            else:
+                protocol_set()
 
+        protocol_link = protocol_set()
 
         downloadLink = f"https://api.proxyscrape.com/v2/?request=getproxies&protocol={protocol_link}&timeout={timeout}&country={country_link}&simplified=true"
         list = requests.get(downloadLink, allow_redirects=True)
