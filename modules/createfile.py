@@ -15,17 +15,12 @@ class Create:
 
     def scrap():
 
-        # from 50ms to max 10000ms default=600
-        timeout = 600 
-
-        # for all "all" for a specific country use country code (IT, US, DE etc...)
-        country_link = "all"
-
-        # choose from http, socks4 and socks5
+        # choose from protocol
         def protocol_set():
             cprint("choose a protocol: socks5 | socks4 | http", "cyan")
             protocol_list = ['socks5', 'socks4', 'http']
             protocol_answer = input()
+            
 
             if protocol_answer == protocol_list[0]:
                 return protocol_list[0]
@@ -36,9 +31,22 @@ class Create:
             elif protocol_answer == protocol_list[2]:
                 return protocol_list[2]
             else:
-                protocol_set()
+                cprint("!!! choose a valid input !!!", "cyan")
+                return protocol_set()
+
+        #choose timeout
+        def timeout_set():
+            cprint("choose timeout (25 to 10000)", "cyan")
+            timeout = input()
+            if timeout >= '25':
+                return timeout
+            else:
+                cprint("!!! choose a valid input !!!", "cyan")
+                return timeout_set()
 
         protocol_link = protocol_set()
+        timeout = timeout_set()
+        country_link = "all"
 
         downloadLink = f"https://api.proxyscrape.com/v2/?request=getproxies&protocol={protocol_link}&timeout={timeout}&country={country_link}&simplified=true"
         list = requests.get(downloadLink, allow_redirects=True)
