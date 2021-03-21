@@ -13,13 +13,16 @@ cprint(figlet_format(owner, font="digital"), "cyan")
 
 
 def program():
-    
+
     cprint('dump? y or exit', "cyan")
     answer = input()
 
     if answer == 'y':
         try:
-            Create.scrap()
+            dump = Create.scrap()
+            if dump == None: cprint('no live proxy found, try to change the timeout or protocol for more results', "cyan")
+            else : cprint('the scan is done.', "cyan")
+            program()
         except:
             cprint('error occured please try later...', "cyan")
             program()
@@ -28,5 +31,5 @@ def program():
     else:
         cprint("############ bro don't waste my time ############", "cyan")
         program()
-        
+
 program()

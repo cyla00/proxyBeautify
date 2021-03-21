@@ -38,7 +38,8 @@ class Create:
         def timeout_set():
             cprint("choose timeout (25 to 10000)", "cyan")
             timeout = input()
-            if timeout >= '25' or timeout <= '10000':
+            check_int = int(timeout)
+            if 25 <= check_int <= 10000:
                 return timeout
             else:
                 cprint("!!! choose a valid input !!!", "cyan")
@@ -63,9 +64,7 @@ class Create:
             checker = ProxyChecker()
             done = checker.check_proxy(to_scan)
 
-            if done == False:
-                cprint("dead", "cyan")
-            else:
+            if done != False:
                 protocol = done['protocols']
                 for p in protocol:
                     cleaned_protocol = p.translate({ord("["): None})
