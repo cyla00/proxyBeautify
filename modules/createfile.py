@@ -20,7 +20,7 @@ class Create:
             cprint("choose a protocol: socks5 | socks4 | http", "cyan")
             protocol_list = ['socks5', 'socks4', 'http']
             protocol_answer = input()
-            
+
 
             if protocol_answer == protocol_list[0]:
                 return protocol_list[0]
@@ -38,7 +38,7 @@ class Create:
         def timeout_set():
             cprint("choose timeout (25 to 10000)", "cyan")
             timeout = input()
-            if timeout >= '25':
+            if timeout >= '25' or timeout <= '10000':
                 return timeout
             else:
                 cprint("!!! choose a valid input !!!", "cyan")
@@ -74,6 +74,4 @@ class Create:
                 country = done['country']
                 anonymous = done['anonymity']
                 timeout = done['timeout']
-                cprint(f"{cleaned_protocol}  {cleaned}     ====> {country} |{country_code}|{anonymous}|timeout: ( {timeout} )", "cyan")            
-
-
+                cprint(f"{cleaned_protocol}  {cleaned}     ====> {country} |{country_code}|{anonymous}|timeout: ( {timeout} )", "cyan")
