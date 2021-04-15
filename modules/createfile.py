@@ -73,4 +73,9 @@ class Create:
                 country = done['country']
                 anonymous = done['anonymity']
                 timeout = done['timeout']
-                cprint(f"{cleaned_protocol}  {cleaned}     ====> {country} |{country_code}|{anonymous}|timeout: ( {timeout} )", "cyan")
+
+                # DETAILED PROXY
+                # cprint(f"{cleaned_protocol}  {cleaned}     ====> {country} |{country_code}|{anonymous}|timeout: ( {timeout} )", "cyan")
+
+                # RAW PROXY
+                cprint(f"{cleaned_protocol}  {cleaned}", "cyan")
