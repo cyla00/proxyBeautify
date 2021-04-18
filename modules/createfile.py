@@ -45,9 +45,18 @@ class Create:
                 cprint("!!! choose a valid input !!!", "cyan")
                 return timeout_set()
 
+        def formattation():
+            cprint("choose an output format", "cyan")
+            cprint("[1] full format", "cyan")
+            cprint("[2] proxychains format (type:ip:port)", "cyan")
+            print_input_format = input()
+            return print_input_format
+
         protocol_link = protocol_set()
         timeout = timeout_set()
         country_link = "all"
+
+
 
         downloadLink = f"https://api.proxyscrape.com/v2/?request=getproxies&protocol={protocol_link}&timeout={timeout}&country={country_link}&simplified=true"
         list = requests.get(downloadLink, allow_redirects=True)
@@ -55,7 +64,10 @@ class Create:
         content = list.content
         listed = content.split()
 
+        output_format = formattation()
+
         for ip in listed:
+
             proxy = str(ip)
 
             to_scan = proxy.translate({ord("b"): None, ord("'"): None})
@@ -65,6 +77,7 @@ class Create:
             done = checker.check_proxy(to_scan)
 
             if done != False:
+
                 protocol = done['protocols']
                 for p in protocol:
                     cleaned_protocol = p.translate({ord("["): None})
@@ -74,8 +87,12 @@ class Create:
                 anonymous = done['anonymity']
                 timeout = done['timeout']
 
-                # DETAILED PROXY
-                # cprint(f"{cleaned_protocol}  {cleaned}     ====> {country} |{country_code}|{anonymous}|timeout: ( {timeout} )", "cyan")
 
-                # RAW PROXY
-                cprint(f"{cleaned_protocol}  {cleaned}", "cyan")
+
+                if output_format == '1':
+                    cprint(f"{cleaned_protocol}:{cleaned} ====> {country}|{country_code}|{anonymous}|timeout: ( {timeout} )", "cyan")
+                elif output_format == '2':
+                    cprint(f"{cleaned_protocol}  {cleaned}", "cyan")
+                else:
+                    cprint(f"!!! choose a valid option !!!", "cyan")
+                    scrap()

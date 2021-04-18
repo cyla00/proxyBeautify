@@ -29,7 +29,6 @@ def program():
     elif answer == 'exit':
             cprint('exiting...', "cyan")
     else:
-        cprint("############ bro don't waste my time ############", "cyan")
         program()
 
 program()
