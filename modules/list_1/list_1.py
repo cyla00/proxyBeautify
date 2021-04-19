@@ -1,3 +1,5 @@
+# website reference 'https://spys.one/en/free-proxy-list/'
+
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.support.select import Select
@@ -6,7 +8,11 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from proxy_checker import ProxyChecker
+from termcolor import cprint
 import time
+import os
+import re
 
 class List_1:
 
@@ -26,11 +32,30 @@ class List_1:
         check_500 = Select(website.find_element_by_id("xpp"))
         check_500.select_by_visible_text("500")
 
-        ####### fetch the list of IPs plus info
-        get_ip = website.find_elements_by_class_name("spy1xx")
+        ####### fetch the list of IPs plus info and sanitize
+        get_ip = website.find_elements_by_class_name("spy14")
         for i in get_ip:
-            print(i.text)
+            whitelist = set('1234567890:.')
+            re_ip = re.compile('(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:\d{1,5})')
+            raw_ip_list = re.findall(re_ip, str(i.text))
+            if raw_ip_list == '':
+                raw_ip_list.remove()
+            to_scan = ''.join(raw_ip_list)
+            print(str(to_scan))
 
         website.quit()
 
-List_1.scrap()
+
+
+
+
+
+
+
+
+
+
+
+
+
+ciao = List_1.scrap()
