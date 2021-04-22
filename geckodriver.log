@@ -323,3 +323,74 @@ console.warn: SearchSettings: "get: No settings file exists, new profile?" (new 
 
 (/usr/lib/firefox/firefox:16145): GLib-GObject-CRITICAL **: 15:33:34.903: g_object_set: assertion 'G_IS_OBJECT (object)' failed
 JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1619105929198	geckodriver	INFO	Listening on 127.0.0.1:36087
+1619105929201	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile2E4Ptj"
+*** You are running in headless mode.
+console.error: Enterprise Policies: 
+  Error parsing JSON file
+
+(/usr/lib/firefox/firefox:16660): GLib-GObject-CRITICAL **: 15:38:49.664: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+
+(/usr/lib/firefox/firefox:16684): GLib-GObject-CRITICAL **: 15:38:49.714: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1619105930142	Marionette	INFO	Listening on port 44951
+1619105930214	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:16787): GLib-GObject-CRITICAL **: 15:38:50.657: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1619106138751	geckodriver	INFO	Listening on 127.0.0.1:44145
+1619106138755	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileMQLjmT"
+*** You are running in headless mode.
+console.error: Enterprise Policies: 
+  Error parsing JSON file
+
+(/usr/lib/firefox/firefox:17109): GLib-GObject-CRITICAL **: 15:42:19.236: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+
+(/usr/lib/firefox/firefox:17130): GLib-GObject-CRITICAL **: 15:42:19.272: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1619106139692	Marionette	INFO	Listening on port 41435
+1619106139767	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:17237): GLib-GObject-CRITICAL **: 15:42:20.194: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1619106423221	geckodriver	INFO	Listening on 127.0.0.1:52923
+1619106423225	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilembOIJm"
+*** You are running in headless mode.
+console.error: Enterprise Policies: 
+  Error parsing JSON file
+
+(/usr/lib/firefox/firefox:18057): GLib-GObject-CRITICAL **: 15:47:03.663: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+
+(/usr/lib/firefox/firefox:18083): GLib-GObject-CRITICAL **: 15:47:03.739: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1619106424251	Marionette	INFO	Listening on port 46125
+1619106424346	Marionette	WARN	TLS certificate errors will be ignored for this session
+Exiting due to channel error.
+Exiting due to channel error.
+1619106429257	geckodriver	INFO	Listening on 127.0.0.1:49279
+1619106429260	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileexeFfT"
+*** You are running in headless mode.
+console.error: Enterprise Policies: 
+  Error parsing JSON file
+
+(/usr/lib/firefox/firefox:18253): GLib-GObject-CRITICAL **: 15:47:09.710: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+
+(/usr/lib/firefox/firefox:18281): GLib-GObject-CRITICAL **: 15:47:09.763: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1619106430259	Marionette	INFO	Listening on port 33839
+1619106430272	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:18370): GLib-GObject-CRITICAL **: 15:47:10.707: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.

@@ -5,6 +5,7 @@ from pyfiglet import figlet_format
 from threading import Thread
 from concurrent.futures import ProcessPoolExecutor
 from modules.url0 import *
+import sys
 from modules.choices import *
 
 # aesthetics in terminal
@@ -20,20 +21,28 @@ print('')
 cprint('the slaves are working, avg proxies to check (5k), this may take a while...', "cyan")
 print('')
 
-if __name__ == '__main__':
-
-
+def execution():
     with ProcessPoolExecutor(4) as executor:
-        exec1 = executor.submit(URLS.scrap0(format_choice), 1)
-        exec2 = executor.submit(URLS.scrap1(format_choice), 2)
-        exec3 = executor.submit(URLS.scrap2(format_choice), 3)
-        exec4 = executor.submit(URLS.scrap3(format_choice), 4)
+        exec1 = executor.map(URLS.scrap0(format_choice), range(10000), chunksize=100)
+        exec2 = executor.map(URLS.scrap1(format_choice), range(10000), chunksize=100)
+        exec3 = executor.map(URLS.scrap2(format_choice), range(10000), chunksize=100)
+        exec4 = executor.map(URLS.scrap3(format_choice), range(10000), chunksize=100)
 
-        exec1.result()
-        exec2.result()
-        exec3.result()
-        exec4.result()
-    # Thread(target = URLS.scrap0(format_choice)).start()
-    # Thread(target = URLS.scrap1(format_choice)).start()
-    # Thread(target = URLS.scrap2(format_choice)).start()
-    # Thread(target = URLS.scrap3(format_choice)).start()
+        list(exec1)
+        list(exec2)
+        list(exec3)
+        list(exec4)
+
+if __name__ == '__main__':
+    try:
+        execution()
+    except Exception as e:
+        cprint('!!! ERROR slaves too tyred to work !!!', "cyan")
+        cprint('[1] exit', "cyan")
+        cprint('[2] retry', "cyan")
+        err_input = input()
+
+        if err_input == '1':
+            sys.exit()
+        elif err_input == '2':
+            execution()
