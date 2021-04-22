@@ -250,3 +250,76 @@ console.warn: SearchSettings: "get: No settings file exists, new profile?" (new 
 
 (/usr/lib/firefox/firefox:14074): GLib-GObject-CRITICAL **: 15:23:33.916: g_object_set: assertion 'G_IS_OBJECT (object)' failed
 JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1619105311227	geckodriver	INFO	Listening on 127.0.0.1:40057
+1619105311230	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilerVKZMu"
+*** You are running in headless mode.
+console.error: Enterprise Policies: 
+  Error parsing JSON file
+
+(/usr/lib/firefox/firefox:14793): GLib-GObject-CRITICAL **: 15:28:31.671: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+
+(/usr/lib/firefox/firefox:14819): GLib-GObject-CRITICAL **: 15:28:31.744: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1619105312170	Marionette	INFO	Listening on port 45505
+1619105312247	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:14913): GLib-GObject-CRITICAL **: 15:28:32.663: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1619105329140	geckodriver	INFO	Listening on 127.0.0.1:45017
+1619105329143	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile3YtdmG"
+*** You are running in headless mode.
+console.error: Enterprise Policies: 
+  Error parsing JSON file
+
+(/usr/lib/firefox/firefox:15053): GLib-GObject-CRITICAL **: 15:28:49.594: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+
+(/usr/lib/firefox/firefox:15079): GLib-GObject-CRITICAL **: 15:28:49.648: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1619105330110	Marionette	INFO	Listening on port 39001
+1619105330155	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:15179): GLib-GObject-CRITICAL **: 15:28:50.594: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1619105571926	geckodriver	INFO	Listening on 127.0.0.1:42715
+1619105571928	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile4MFtPv"
+*** You are running in headless mode.
+console.error: Enterprise Policies: 
+  Error parsing JSON file
+
+(/usr/lib/firefox/firefox:15724): GLib-GObject-CRITICAL **: 15:32:52.389: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+
+(/usr/lib/firefox/firefox:15747): GLib-GObject-CRITICAL **: 15:32:52.461: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1619105572932	Marionette	INFO	Listening on port 38227
+1619105573045	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:15842): GLib-GObject-CRITICAL **: 15:32:53.363: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1619105613435	geckodriver	INFO	Listening on 127.0.0.1:33285
+1619105613438	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilel4JqU3"
+*** You are running in headless mode.
+console.error: Enterprise Policies: 
+  Error parsing JSON file
+
+(/usr/lib/firefox/firefox:16027): GLib-GObject-CRITICAL **: 15:33:33.896: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+
+(/usr/lib/firefox/firefox:16053): GLib-GObject-CRITICAL **: 15:33:33.952: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1619105614373	Marionette	INFO	Listening on port 37163
+1619105614450	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:16145): GLib-GObject-CRITICAL **: 15:33:34.903: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
