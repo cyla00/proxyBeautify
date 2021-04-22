@@ -34,15 +34,4 @@ def execution():
         list(exec4)
 
 if __name__ == '__main__':
-    try:
-        execution()
-    except Exception as e:
-        cprint('!!! ERROR slaves too tyred to work !!!', "cyan")
-        cprint('[1] exit', "cyan")
-        cprint('[2] retry', "cyan")
-        err_input = input()
-
-        if err_input == '1':
-            sys.exit()
-        elif err_input == '2':
-            execution()
+    execution()
