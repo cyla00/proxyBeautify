@@ -8,6 +8,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from proxy_checker import ProxyChecker
 from termcolor import cprint
+from .checker import *
 import requests
 import time
 import os
@@ -42,32 +43,18 @@ firefoxWebDriver_path = "./geckodriver"
 
 class URLS:
 
-    def scrap0():
+    def scrap0(format_choice):
         for url0index in URL0:
             website = webdriver.Firefox(executable_path=firefoxWebDriver_path, options=firefoxOptions)
             website.get(url0index)
             open_list = website.find_element_by_tag_name('textarea').get_attribute('value')
             re_ip = re.compile('(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:\d{1,5})')
             raw_list = re.findall(re_ip, open_list)
-
             checker = ProxyChecker()
-            for raw_ips in raw_list:
-                checked_ips = checker.check_proxy(raw_ips)
-
-                if checked_ips != False:
-                    raw_protocol = checked_ips['protocols']
-                    for i in raw_protocol:
-                        protocol = i.replace('[]',"")
-
-                    anonymity = checked_ips['anonymity']
-                    country = checked_ips['country']
-                    country_code = checked_ips['country_code']
-                    timeout = checked_ips['timeout']
-
-                    cprint(f"{protocol} {raw_ips}  ==> {anonymity}|timeout({timeout})     |{country}|({country_code})", 'cyan')
+            Checker.multi_check(raw_list, checker, format_choice)
 
 
-    def scrap1():
+    def scrap1(format_choice):
         for url1index in URL1:
             website = webdriver.Firefox(executable_path=firefoxWebDriver_path, options=firefoxOptions)
             website.get(url1index)
@@ -75,60 +62,21 @@ class URLS:
             re_ip = re.compile('(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:\d{1,5})')
             raw_list = re.findall(re_ip, open_list)
             checker = ProxyChecker()
-            for raw_ips in raw_list:
-                checked_ips = checker.check_proxy(raw_ips)
-
-                if checked_ips != False:
-                    raw_protocol = checked_ips['protocols']
-                    for i in raw_protocol:
-                        protocol = i.replace('[]',"")
-
-                    anonymity = checked_ips['anonymity']
-                    country = checked_ips['country']
-                    country_code = checked_ips['country_code']
-                    timeout = checked_ips['timeout']
-
-                    cprint(f"{protocol} {raw_ips}  ==> {anonymity}|timeout({timeout})     |{country}|({country_code})", 'cyan')
+            Checker.multi_check(raw_list, checker, format_choice)
 
 
-    def scrap2():
+    def scrap2(format_choice):
         website = webdriver.Firefox(executable_path=firefoxWebDriver_path, options=firefoxOptions)
         website.get(URL2)
         open_list = website.find_element_by_tag_name('body').get_attribute('innerHTML')
         re_ip = re.compile('(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:\d{1,5})')
         raw_list = re.findall(re_ip, open_list)
         checker = ProxyChecker()
-        for raw_ips in raw_list:
-            checked_ips = checker.check_proxy(raw_ips)
+        Checker.single_check(raw_list, checker, format_choice)
 
-            if checked_ips != False:
-                raw_protocol = checked_ips['protocols']
-                for i in raw_protocol:
-                    protocol = i.replace('[]',"")
-
-                anonymity = checked_ips['anonymity']
-                country = checked_ips['country']
-                country_code = checked_ips['country_code']
-                timeout = checked_ips['timeout']
-
-                cprint(f"{protocol} {raw_ips}  ==> {anonymity}|timeout({timeout})     |{country}|({country_code})", 'cyan')
-
-    def scrap3():
+    def scrap3(format_choice):
         website = requests.get(URL3).text
         re_ip = re.compile('(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:\d{1,5})')
         raw_list = re.findall(re_ip, website)
         checker = ProxyChecker()
-        for raw_ips in raw_list:
-            checked_ips = checker.check_proxy(raw_ips)
-
-            if checked_ips != False:
-                raw_protocol = checked_ips['protocols']
-                for i in raw_protocol:
-                    protocol = i.replace('[]',"")
-
-                anonymity = checked_ips['anonymity']
-                country = checked_ips['country']
-                country_code = checked_ips['country_code']
-                timeout = checked_ips['timeout']
-
-                cprint(f"{protocol} {raw_ips}  ==> {anonymity}|timeout({timeout})     |{country}|({country_code})", 'cyan')
+        Checker.single_check(raw_list, checker, format_choice)
