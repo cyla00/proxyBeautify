@@ -18,22 +18,28 @@ import re
 
 # websites list, some have multiple pages
 URL0 = [
-'https://www.sslproxies.org/',
-'https://free-proxy-list.net/anonymous-proxy.html',
-'https://free-proxy-list.net/uk-proxy.html',
-'https://www.us-proxy.org/'
+# 'https://www.sslproxies.org/',
+# 'https://free-proxy-list.net/anonymous-proxy.html'
+# 'https://free-proxy-list.net/uk-proxy.html',
+# 'https://www.us-proxy.org/'
 ]
 
 URL1 = [
-'https://www.proxy-list.download/HTTP',
-'https://www.proxy-list.download/HTTPS',
-'https://www.proxy-list.download/SOCKS4',
+# 'https://www.proxy-list.download/HTTP',
+# 'https://www.proxy-list.download/HTTPS',
+# 'https://www.proxy-list.download/SOCKS4',
 'https://www.proxy-list.download/SOCKS5'
 ]
 
-URL2 = 'http://spys.me/proxy.txt'
-URL3 = 'https://api.proxyscrape.com/?request=getproxies&proxytype=all&country=all&ssl=all&anonymity=all'
-URL4 = 'https://spys.one/en/free-proxy-list/'
+URL2 = [
+# 'http://spys.me/proxy.txt'
+]
+URL3 = [
+'https://api.proxyscrape.com/?request=getproxies&proxytype=socks5&country=all&ssl=all&anonymity=all'
+]
+URL4 = [
+# 'https://spys.one/en/free-proxy-list/'
+]
 
 # selenium options
 firefoxOptions = Options()
@@ -66,17 +72,19 @@ class URLS:
 
 
     def scrap2(format_choice):
-        website = webdriver.Firefox(executable_path=firefoxWebDriver_path, options=firefoxOptions)
-        website.get(URL2)
-        open_list = website.find_element_by_tag_name('body').get_attribute('innerHTML')
-        re_ip = re.compile('(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:\d{1,5})')
-        raw_list = re.findall(re_ip, open_list)
-        checker = ProxyChecker()
-        Checker.single_check(raw_list, checker, format_choice)
+        for url2index in URL2:
+            website = webdriver.Firefox(executable_path=firefoxWebDriver_path, options=firefoxOptions)
+            website.get(url2index)
+            open_list = website.find_element_by_tag_name('body').get_attribute('innerHTML')
+            re_ip = re.compile('(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:\d{1,5})')
+            raw_list = re.findall(re_ip, open_list)
+            checker = ProxyChecker()
+            Checker.single_check(raw_list, checker, format_choice)
 
     def scrap3(format_choice):
-        website = requests.get(URL3).text
-        re_ip = re.compile('(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:\d{1,5})')
-        raw_list = re.findall(re_ip, website)
-        checker = ProxyChecker()
-        Checker.single_check(raw_list, checker, format_choice)
+        for url3index in URL3:
+            website = requests.get(url3index).text
+            re_ip = re.compile('(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:\d{1,5})')
+            raw_list = re.findall(re_ip, website)
+            checker = ProxyChecker()
+            Checker.single_check(raw_list, checker, format_choice)

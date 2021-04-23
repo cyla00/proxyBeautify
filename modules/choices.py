@@ -5,7 +5,7 @@ class Choices:
     def format():
         cprint(f"choose an output format", 'cyan')
         cprint(f"[1] full_format (protocol|ip|port|anonimity_score|timeout|country)", 'cyan')
-        cprint(f"[2] proxychains_format", 'cyan')
+        cprint(f"[2] proxychains_format (protocol|ip|port)", 'cyan')
         format_choice = input()
         return format_choice
 
